@@ -4,10 +4,10 @@ Simple script to sync files between put.io downloads and local storage. It uses 
 
 ## Requirements
 
-Sqlite
-Python 2.x (see python required libraries in requirements.txt)
+- Sqlite
+- Python 2.x (see python required libraries in requirements.txt)
 
-## Getting Strted
+## Getting Started
 
 Create a sqlite database:
 
