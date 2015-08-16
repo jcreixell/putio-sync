@@ -1,0 +1,12 @@
+db:
+  path: /home/user/putio.db
+
+putio:
+  client_id: 1234
+  client_secret: ab12nfkjnk4jk5kjb
+  callback_url:
+  oauth_token: BLABLABLA
+
+download:
+  path: /mnt/disk/downloads
+
