@@ -15,6 +15,7 @@ Create a sqlite database:
 sqlite3 putio.db
 
 > CREATE TABLE downloads (id int, name string);
+> CREATE TABLE ignored (id int);
 > .q
 ```
 

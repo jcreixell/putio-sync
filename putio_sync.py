@@ -17,12 +17,15 @@ c = conn.cursor()
 c.execute("SELECT id FROM downloads")
 existing =  [i[0] for i in c.fetchall()]
 
+c.execute("SELECT id FROM ignored")
+ignored =  [i[0] for i in c.fetchall()]
+
 helper = putio.AuthHelper(config['putio']['client_id'], config['putio']['client_secret'], config['putio']['callback_url'], type='token')
 client = putio.Client(config['putio']['oauth_token'])
 files = client.File.list()
 
 for file in files:
-	if not file.id in existing:
+	if not file.id in existing and not file.id in ignored:
 		print "Downloading " + file.name + "..."
 		file.download(config['download']['path'])
 		c.execute("INSERT INTO downloads VALUES (?,?)", (file.id, file.name))
